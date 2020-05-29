@@ -1,0 +1,30 @@
+.new-game
+{
+  .title{
+    font-size: 4em;
+    font-weight: 600;
+  }
+  .background-triangle-first{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+      polygon{
+        fill: #ec7264;
+      }
+  
+  }
+  .background-triangle-second{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1
+  }
+  .card-body{
+    z-index: 2;
+
+    .center-content{
+      margin-left: 400px;
+    }
+  }
+}

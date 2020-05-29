@@ -1,0 +1,262 @@
+.hanger{
+  min-height: 100vh;
+  display: flex;
+  background-color: #3b4263;
+  align-items: center;
+  .container{
+    height: 100%;
+  }
+
+  .card{
+    overflow: hidden;
+    .loading{
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      .item{
+        flex: 1;
+      }
+    }
+
+    .game-over-text{
+      font-weight: 700;
+      color: indianred;
+    }
+    .restart-button{
+      border: 3px solid;
+      height: 70px;
+      font-weight: 600;
+      border-color: indianred;
+      color: indianred;
+      &:hover{
+        border: 3px solid;
+        background-color: indianred;
+        color: white;
+      }
+    }
+
+    .image-box{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    
+    .hanger-human{
+      position: absolute ;
+    }
+
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,.05);
+    transition: all 150ms ease-in-out;
+    min-height: 640px;
+    .card-header{
+      height: 160px;
+      border-radius: 20px 20px 0 0;
+      border: none;
+      background: none;
+      .description-text{
+        color: #666;
+      }
+      .missed-character{
+        display: inline-block;
+        color: #ca4234;
+        font-size: 3em;
+        font-weight: 700;
+        margin: 5px;
+        text-transform: uppercase;
+        &:first-of-type{
+          margin-left: -5px;
+        }
+      }
+    }
+    .card-footer{
+      border: none;
+      min-height: 160px;
+      .character-box{
+        background-color: rgb(90, 89, 89);
+        min-height: 100px;
+        min-width: 90px;
+        border-radius: 10px;
+        margin: 0.1em;
+        opacity: 0.98;
+        text-transform: uppercase;
+        color: white;
+        font-weight: 800;
+        font-size: 3em;
+      }
+      &.game-over-footer{
+        background-color: rgba($color: indianred, $alpha: 0.9);
+        transition: all 250ms ease-in-out;
+        .character-box{
+          margin: 0em;
+          border-radius: 0px;
+          &:first-of-type{
+            border-radius: 10px 0 0 10px;
+          }
+          &:last-of-type{
+            border-radius: 0 10px 10px 0;
+          }
+        }
+      }
+      &.game-won-footer{
+        background-color: rgba($color: #444, $alpha: 0.9);
+        .character-box{
+          background-color: gold;
+          transition: all 150ms ease-in-out;
+          margin: 0em;
+          border-radius: 0px;
+          &:first-of-type{
+            border-radius: 10px 0 0 10px;
+          }
+          &:last-of-type{
+            border-radius: 0 10px 10px 0;
+          }
+        }
+      }
+    }
+  }
+
+  // hanger svg selectable elements
+  // head
+  // -- left-eye
+  // -- right-eye
+  // -- mouth
+  // chest
+  // right-arm-with-hand
+  // -- right-arm
+  // -- right-hand
+  // left-arm-with-hand
+  // -- left-arm
+  // -- left-hand
+  // complete-right-leg
+  // -- right-leg
+  // -- right-foot
+  // complete-left-leg
+  // -- left-leg
+  // -- left-foot
+  
+  #hanger-body{
+    transition: transform 150ms ease-in-out;
+    transform: translateY(0px);
+    #rope{
+      transform: translateX(1px) translateY(4px)
+    }
+    #head{
+      transition: transform 150ms ease-in-out;
+      transform-origin: 63px 90px;
+    }
+    #right-arm-with-hand
+    {
+      transition: transform 150ms ease-in-out;
+      transform-origin: 68px 93px;
+    }
+    #left-arm-with-hand{
+      transition: transform 150ms ease-in-out;
+      transform-origin: 55px 93px;
+    }
+    #complete-right-leg{
+      transition: transform 150ms ease-in-out;
+      transform-origin: 68px 112px;
+    }
+    #complete-left-leg{
+      transition: transform 150ms ease-in-out;
+      transform-origin: 55px 112px;
+    }
+    #right-foot{
+      transition: transform 150ms ease-in-out;
+      transform-origin: 74px 135px;
+    }
+    #left-foot{
+      transition: transform 150ms ease-in-out;
+      transform-origin: 50px 135px;
+    }
+    
+    &.hanged{
+      transform: translateY(-10px);
+      #rope{
+        transform: translateY(9px);
+      }
+      #head{
+        transform: rotate(-35deg);
+      }
+      #right-arm-with-hand{
+        transform: rotate(35deg)
+      }
+      #left-arm-with-hand{
+        transform: rotate(-35deg)
+      }
+      #complete-right-leg{
+        transform: rotate(12deg)
+      }
+      #complete-left-leg{
+        transform: rotate(-12deg)
+      }
+      #right-foot{
+        transform: rotate(30deg)
+      }
+      #left-foot{
+        transform: rotate(-30deg);
+      }
+    }
+    &.shaking{
+      #head{
+        transform: rotate(-35deg);
+      }
+      #right-arm-with-hand{
+        transform: rotate(35deg)
+      }
+      #left-arm-with-hand{
+        transform: rotate(-35deg)
+      }
+      #complete-right-leg{
+        transform: rotate(12deg)
+      }
+      #complete-left-leg{
+        transform: rotate(-12deg)
+      }
+      #right-foot{
+        transform: rotate(30deg)
+      }
+      #left-foot{
+        transform: rotate(-30deg);
+      }
+    }
+    
+  }
+
+
+}
+
+@keyframes shake{
+  from{
+    #head{
+      transform: rotate(-35deg);
+    }
+    #right-arm-with-hand{
+      transform: rotate(35deg)
+    }
+    #left-arm-with-hand{
+      transform: rotate(-35deg)
+    }
+    #complete-right-leg{
+      transform: rotate(12deg)
+    }
+    #complete-left-leg{
+      transform: rotate(-12deg)
+    }
+    #right-foot{
+      transform: rotate(30deg)
+    }
+    #left-foot{
+      transform: rotate(-30deg);
+    }
+  }
+  50% {
+
+  }
+  to {
+
+  }
+}
+  
