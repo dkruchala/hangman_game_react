@@ -84,6 +84,7 @@ class Hanger extends React.Component {
       .then(resp => resp.json())
       .then(data => {
         let word = data[0].word.toLowerCase().split('')
+        console.log(word)
         let user_guessed = word.map((char) => {
           if (char === '-') {
             return char
