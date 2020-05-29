@@ -37,7 +37,6 @@ class NewGame extends React.Component {
       }, 150)
     }, 150)
 
-    console.log(first_tri_anim)
   }
 
   render() {

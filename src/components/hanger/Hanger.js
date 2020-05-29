@@ -96,7 +96,6 @@ class Hanger extends React.Component {
           word: word,
           user_guessed: user_guessed
         }, () => {
-          console.log(data)
           setTimeout(() => {
             this.setState({
               loading: false
