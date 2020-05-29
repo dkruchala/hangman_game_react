@@ -67,7 +67,7 @@ class NewGame extends React.Component {
         <div className="card-body d-flex flex-column align-items-center justify-content-center">
           <Animated animationIn="bounceInUp" animationOut="bounceOutDown" isVisible={this.state.content_center_visible}>
             <div className="center-content d-flex flex-column align-items-center">
-              <h1 className="title mb-4">The Hanger</h1>
+              <h1 className="title mb-4">The Hangman</h1>
               <button ref={this.button} className="btn btn-lg btn-danger rounded-pill" onClick={() => this.handleNewGameClick()}>NEW GAME</button>
             </div>
           </Animated>
